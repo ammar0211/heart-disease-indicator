@@ -1,0 +1,131 @@
+.bb, .bb::before, .bb::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.bb {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  background: url("heart.png") no-repeat 50%/70% rgba(1, 0, 0, 0.1);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+.bb::before, .bb::after {
+  content: '';
+  z-index: -1;
+  margin: -5%;
+  box-shadow: inset 0 0 0 2px;
+  animation: clipMe 8s linear infinite;
+}
+.bb::before {
+  animation-delay: -4s;
+}
+.bb:hover::after, .bb:hover::before {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+@keyframes clipMe {
+  0%, 100% {
+    clip: rect(0px, 220px, 2px, 0px);
+  }
+  25% {
+    clip: rect(0px, 2px, 220px, 0px);
+  }
+  50% {
+    clip: rect(218px, 220px, 220px, 0px);
+  }
+  75% {
+    clip: rect(0px, 220px, 220px, 218px);
+  }
+}
+
+h1 {
+  margin-top: 50px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  padding: 0.25rem 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  line-height: 4rem;
+  opacity: 1;
+  color: #7a7f82;
+  font-family: "Lato",sans-serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  background-color: #141414;
+  overflow: hidden;
+  margin: 0	
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #fff;
+}
+.svg-wrapper {
+  position: relative;
+  top: 30%;
+  transform: translateY(-60%);
+  margin: 0 auto;
+  width: 1000px;
+}
+.shape1,
+.shape2 {
+  stroke-dasharray: 2160;
+  stroke-width: 5px;
+  fill: transparent;
+  stroke: #fff;
+  border-bottom: 5px solid black;
+  transition-timing-function: linear;
+  transition: stroke-dashoffset 3s, stroke-dasharray 3s;
+}
+.shape1 {
+  stroke-dashoffset: 2160;
+}
+.shape2 {
+  stroke-dashoffset: -2160;
+}
+.text {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  padding: 0.25rem 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  line-height: 4rem;
+  opacity: 1;
+  color: #7a7f82;
+  font-family: "Lato",sans-serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  top: -80px;
+}
+.svg-wrapper:hover .shape1,
+.svg-wrapper:hover .shape2 {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 2160;
+}

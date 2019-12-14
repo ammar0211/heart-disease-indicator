@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/rstyles.css') }}">
+	<link rel="stylesheet" href="{{'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'}}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(function myfunction() {
+  			$('.shape').addClass("shape-border");
+  			$('.svg-wrapper').click(function() {
+    			$('.shape').toggleClass('shape-border');
+ 			 });
+		});
+		window.onload=myfunction;
+	</script>
+<p class="announce">Hello {{name}} <br>Probability of you having heart disease was found to be<p> 
+<div class="svg-wrapper">
+  <svg height="60" width="520" xmlns="http://www.w3.org/2000/svg">
+    <rect class="shape" height="60" width="520" />
+    <div class="text">{{percent_proba}}%</div>
+  </svg>
+</div>
+<div class="social-btns">
+	<a class="btn home" href="/"><i class="fa fa-home"></i></a>
+	<a class="btn linkedin" href="https://www.linkedin.com/in/ammar0211/" target="_blank"><i class="fa fa-linkedin"></i></a>
+	<a class="btn github" href="https://github.com/ammar0211" target="_blank"><i class="fa fa-github"></i></a>
+	<a class="btn paper-plane" href="mailto:ammarakhtar0211@gmail.com" target="_blank"><i class="fa fa-paper-plane"></i></a>
+	<a class="btn whatsapp" href="https://api.whatsapp.com/send?phone=917042294692" target="_blank"><i class="fa fa-whatsapp"></i></a>
+
+</div>
+</body>
+</html>

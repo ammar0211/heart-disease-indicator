@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/pstyles.css') }}">
+</head>
+<body>  
+  <h1>Heart Disease Prediction</h1>
+  <form methog="post" method="post" action="predict">
+    <input id="input-1" name="name" type="text" placeholder="John Doe" pattern="[a-zA-Z][a-zA-Z ]+[a-zA-Z]$" required autofocus />
+    <label for="input-1">
+      <span class="label-text">Full Name</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Please Enter your Name. Valid Inputs: Alphabets and Spaces</span>
+      <!--<div class="signup-button-trigger">Start</div>-->
+    </label>
+
+    <input id="input-2" name="age" type="text" placeholder="18 Years" pattern="[0-9]{2,3}" required />
+    <label for="input-2">
+      <span class="label-text">Age</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Enter Your age in Years. Valid Inputs: Any Interger Value <br><br>Age is the most important risk factor in developing cardiovascular or heart diseases, with approximately a tripling of risk with each decade of life. Coronary fatty streaks can begin to form in adolescence. Simultaneously, the risk of stroke doubles every decade after age 55. <br> Enter Your age between 10-150 Years</span>
+    </label>
+
+    <input id="input-3" name="sex" type="text" placeholder="0" pattern="[0-1]{1}" required />
+    <label for="input-3">
+      <span class="label-text">Sex</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Enter Your sex. Valid Inputs: 0 = Female; 1 = Male <br><br>Men are at greater risk of heart disease than pre-menopausal women. Once past menopause, it has been argued that a woman’s risk is similar to a man’s although more recent data from the WHO and UN disputes this. If a female has diabetes, she is more likely to develop heart disease than a male with diabetes.</span>
+    </label>
+
+    <input id="input-4" name="chest_pain_type" type="text" placeholder="2" pattern="[1-4]{1}"required />
+    <label for="input-4">
+      <span class="label-text">Chest Pain Type</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Enter the type of chest pain experienced. Allowed Values: 1 = typical angina; 2 = atypical angina; 3 = non — anginal pain; 4 = asymptotic  <br><br>Angina is chest pain or discomfort caused when your heart muscle doesn’t get enough oxygen-rich blood. It may feel like pressure or squeezing in your chest. The discomfort also can occur in your shoulders, arms, neck, jaw, or back. Angina pain may even feel like indigestion.</span>
+    </label>
+
+    <input id="input-5" name="resting_blood_pressure" type="text" placeholder="120 mmHg" pattern="[0-9]{1,3}" required />
+    <label for="input-5">
+      <span class="label-text">Resting Blood Pressure</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Enter the resting blood pressure value im mmHg unit.<br><br>Over time, high blood pressure can damage arteries that feed your heart. High blood pressure that occurs with other conditions, such as obesity, high cholesterol or diabetes, increases your risk even more.</span>
+    </label>
+
+    <input id="input-6" name="serum_cholesterol_mg_per_dl" type="text" placeholder="210 mg/dl" pattern="[0-9]{1,3}" required autofocus />
+    <label for="input-6">
+      <span class="label-text">Serum Cholestrol</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Enter the value of serum cholesterol in mg/dl unit.<br><br>A high level of low-density lipoprotein (LDL) cholesterol (the “bad” cholesterol) is most likely to narrow arteries. A high level of triglycerides, a type of blood fat related to your diet, also ups your risk of a heart attack. However, a high level of high-density lipoprotein (HDL) cholesterol (the “good” cholesterol) lowers your risk of a heart attack.</span>
+    </label>
+
+    <input id="input-7" name="fasting_blood_sugar_gt_120_mg_per_dl" type="text" placeholder="120 mg/dl" pattern="[0-1]{1}" required autofocus />
+    <label for="input-7">
+      <span class="label-text">Fasting Blood Sugar</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Enter Fasting Blood Sugar value. Allowed Input: 0 = Fasting Blood Sugar < 120mg/dl; 1 = Fasting Blood Sugar Value > 120mg/dl<br><br>Not producing enough of a hormone secreted by your pancreas (insulin) or not responding to insulin properly causes your body’s blood sugar levels to rise, increasing your risk of a heart attack.</span>
+    </label>
+
+    <input id="input-8" name="resting_ekg_results" type="text" placeholder="0" pattern="[0-2]{1}"required autofocus />
+    <label for="input-8">
+      <span class="label-text">Resting ECG</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Enter your resting ECG Value. Valid Inputs: 0 = normal; 1 = having ST-T wave abnormality; 2 = left ventricular hyperthrophy<br><br>For people at low risk of cardiovascular disease, the USPSTF concludes with moderate certainty that the potential harms of screening with resting or exercise ECG equal or exceed the potential benefits.</span>
+    </label>
+
+    <input id="input-9" name="max_heart_rate_achieved" type="text" placeholder="108" pattern="[0-9]{1,3}" required autofocus />
+    <label for="input-9">
+      <span class="label-text">Maximum Heart Rate Achieved</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Enter the Maximum Heart Rate recorded<br><br>The increase in cardiovascular risk, associated with the acceleration of heart rate, was comparable to the increase in risk observed with high blood pressure. It has been shown that an increase in heart rate by 10 beats per minute was associated with an increase in the risk of cardiac death by at least 20%.</span>
+    </label>
+
+    <input id="input-10" name="exercise_induced_angina" type="text" placeholder="0" pattern="[0-1]{1}" required autofocus />
+    <label for="input-10">
+      <span class="label-text">Exercised Induced Angina</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Do you experience Angina during or after the exercise? Valid Inputs: 0 = No; 1 = Yes<br><br>The pain or discomfort associated with angina usually feels tight, gripping or squeezing, and can vary from mild to severe. Angina is usually felt in the center of your chest but may spread to either or both of your shoulders, or your back, neck, jaw or arm. It can even be felt in your hands.</span>
+    </label>
+
+
+    <input id="input-11" name="oldpeak_eq_st_depression" type="text" placeholder="0.2" pattern="[0-9]*\.?[0-9]*" required autofocus />
+    <label for="input-11">
+      <span class="label-text">ST Depression induced by exercise</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Enter the ST Depression value induced by exercises.<br><br>In general, the occurrence of horizontal or down-sloping ST-segment depression at a lower heart rate indicates a worse prognosis and higher likelihood of multi-vessel disease. The duration of ST-segment depression is also important, as prolonged recovery after peak stress is consistent with a positive treadmill ECG stress test.</span>
+    </label>
+
+    <input id="input-12" name="slope_of_peak_exercise_st_segment" type="text" placeholder="1" pattern="[1-3]{1}" required autofocus />
+    <label for="input-12">
+      <span class="label-text">Peak Exercise ST Segment</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Enter the type of peak in Exercise ST Test. Valid Inputs: 1 = upsloping; 2 = flat; 3 = downsloping<br><br>In general, the occurrence of horizontal or down-sloping ST-segment depression at a lower heart rate indicates a worse prognosis and higher likelihood of multi-vessel disease. The duration of ST-segment depression is also important, as prolonged recovery after peak stress is consistent with a positive treadmill ECG stress test.</span>
+    </label>
+
+    <input id="input-13" name="num_major_vessels" type="text" placeholder="0" pattern="[0-3]{1}" required autofocus />
+    <label for="input-13">
+      <span class="label-text">Number of Vessels colored by Fluoroscopy</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Enter the number of blood vessels colored during Fluoroscopy <br><br>In cardiac catheterization, fluoroscopy is used to help the healthcare provider see the flow of blood through the coronary arteries to check for arterial blockages. Electrophysiologic procedures.</span>
+    </label>
+
+    <input id="input-14" name="thal" type="text" placeholder="0" pattern="[0-2]{1}" required autofocus />
+    <label for="input-14">
+      <span class="label-text">Thalassemia</span>
+      <span class="nav-dot"></span>
+      <span class="info-text">Enter the possibility of Thalassemia. Valid Inputs: 0 = Normal; 1 = Fixed Defect; 2 = Reversible Defect<br><br>Thalassemia is a blood disorder passed down through families (inherited) in which the body makes an abnormal form or inadequate amount of hemoglobin. Hemoglobin is the protein in red blood cells that carries oxygen. The disorder results in large numbers of red blood cells being destroyed, which leads to anemia.</span>
+    </label>
+    <button type="submit">Submit</button>
+    <p class="tip">Press Tab</p>
+    <!--<div class="signup-button">Sign Up</div> -->
+  </form>
+</body>
+</html>

@@ -1,0 +1,9 @@
+packages.txt
+python3.6-64bit_packages.txt
+model-1_gbc.dill.gz
+model-1_knn.dill.gz
+model-1_lr1.dill.gz
+model-1_xgb.dill.gz
+model-1_rf1.dill.gz
+__pycache__
+*.pyc

@@ -1,0 +1,156 @@
+html, body {
+  background: rgb(20,20,20);
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+}
+.svg-wrapper {
+  position: relative;
+  top: 20%;
+  transform: translateY(-50%);
+	margin: 0 auto;
+  width: 520px;  
+  text-align: center;
+}
+.shape {
+  stroke-dasharray: 0 580;
+  stroke-dashoffset: 580;
+  stroke-width: 4px;
+  fill: transparent;
+  stroke: #fefefe;
+  border-bottom: 5px solid black;
+  transition: stroke-width 2.7s, stroke-dashoffset 2.7s, stroke-dasharray 1.3s;
+  transition-delay: 0s;
+  fill: rgb(20,20,20);  
+}
+.text {
+  font-family: 'David Libre';
+  font-size: 56px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #fff;
+  top: -48px;
+  position: relative;
+  text-align: center;
+  height: 60px;
+  width: 520px;
+  font-variant: small-caps;
+}
+.shape-border {
+  stroke-width: 4px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 480 100;
+}
+.announce {
+  font-family: 'David Libre';
+  text-align:center;
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #fff;
+  top: -200px;
+  left:50%
+  position: relative;
+  text-align: center;
+  height: 60px;
+  font-variant: small-caps;
+}
+
+
+.social-btns {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.social-btns .btn,
+.social-btns .btn:before,
+.social-btns .btn .fa {
+  transition: all 0.35s;
+  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+.social-btns .btn:before {
+  top: 90%;
+  left: -110%;
+}
+.social-btns .btn .fa {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+.social-btns .btn.home:before {
+  background-color: #c51104;
+}
+.social-btns .btn.home .fa {
+  color: #c51104;
+}
+.social-btns .btn.github:before {
+  background-color: #333;
+}
+.social-btns .btn.github .fa {
+  color: #333;
+}
+.social-btns .btn.paper-plane:before {
+  background-color: #dc4a38;
+}
+.social-btns .btn.paper-plane .fa {
+  color: #dc4a38;
+}
+.social-btns .btn.linkedin:before {
+  background-color: #2867b2;
+}
+.social-btns .btn.linkedin .fa {
+  color: #2867b2;
+}
+.social-btns .btn.whatsapp:before {
+  background-color: #25D366;
+}
+.social-btns .btn.whatsapp .fa {
+  color: #25D366;
+}
+.social-btns .btn:focus:before,
+.social-btns .btn:hover:before {
+  top: -10%;
+  left: -10%;
+}
+.social-btns .btn:focus .fa,
+.social-btns .btn:hover .fa {
+  color: #fff;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.social-btns {
+  height: 90px;
+  margin: auto;
+  font-size: 0;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.social-btns .btn {
+  display: inline-block;
+  background-color: #fff;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  margin: 0 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28%;
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+  opacity: 0.99;
+}
+.social-btns .btn:before {
+  content: '';
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.social-btns .btn .fa {
+  font-size: 38px;
+  vertical-align: middle;
+}
