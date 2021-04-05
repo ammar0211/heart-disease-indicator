@@ -130,7 +130,7 @@ def predict():
 
 @app.route("/results")
 def results():
-    return render_template("results.html",percent_proba=session['age'],name=session['name'])
+    return render_template("results.html",percent_proba=session['result'],name=session['name'])
 
 @app.errorhandler(404)
 def not_found(e):
